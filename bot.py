@@ -7,7 +7,5 @@ def send_welcome(message):
 		bot.reply_to(message, 'How are you, nigga?')
 
 
-if __name__ == "__main__":
-  bot.polling(none_stop=True)
 
 
