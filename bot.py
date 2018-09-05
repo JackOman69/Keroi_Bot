@@ -12,7 +12,7 @@ def handle_text(message):
 		else:
 				bot.send_message(message.from_user.id, "Попробуй еще раз!")
 
- bot.polling(none_stop=True)
+bot.polling(none_stop=True)
 
 
  #upd = bot.get_updates()
