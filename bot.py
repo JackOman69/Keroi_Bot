@@ -7,9 +7,11 @@ bot = telebot.TeleBot(consts.token)
 
 @bot.message_handler(content_type = "text")
 def handle_text(message):
-		print("Пришло сообщение от пользователя")
+		if message.text == "Привет!":
+				bot.send_message(509237723, "Здравствуй!")
 
-bot.polling(none_stop = True)
+
+bot.polling(none_stop = True, interval = 0)
 
 
  #upd = bot.get_updates()
