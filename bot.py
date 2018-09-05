@@ -3,16 +3,16 @@ import consts
 
 bot = telebot.TeleBot(consts.token)
 
-# bot.send_message(509237723, "Привет!")
-
 @bot.message_handler(content_type = "text")
 def handle_text(message):
 		if message.text == "Привет!":
-				bot.send_message(message.chat.id, "Здравствуй!")
+				bot.send_message(message.from_user.id, "Здравствуй!")
+		elif message.text == "Пока":
+				bot.send_message(message.from_user.id, "Ну пока :c")		
+		else:
+				bot.send_message(message.from_user.id, "Попробуй еще раз!")
 
-
-if __name__ == "__main__":
-    bot.polling(none_stop=True)
+ bot.polling(none_stop = True)
 
 
  #upd = bot.get_updates()
