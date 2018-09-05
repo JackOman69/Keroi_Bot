@@ -1,6 +1,7 @@
 import telebot
+import consts
 
-bot = telebot.TeleBot(token="682595564:AAH-nTcnj255cHSbuEXLq09SjzOrwwx4W7Y")
+bot = telebot.TeleBot(consts.token)
 
 bot.send_message(509237723, "Привет!")
 
