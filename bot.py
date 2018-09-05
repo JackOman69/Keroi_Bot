@@ -8,10 +8,11 @@ bot = telebot.TeleBot(consts.token)
 @bot.message_handler(content_type = "text")
 def handle_text(message):
 		if message.text == "Привет!":
-				bot.send_message(509237723, "Здравствуй!")
+				bot.send_message(message.chat.id, "Здравствуй!")
 
 
-bot.polling(none_stop = True, interval = 0)
+if __name__ == "__main__":
+    bot.polling(none_stop=True)
 
 
  #upd = bot.get_updates()
