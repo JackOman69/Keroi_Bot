@@ -3,7 +3,7 @@ import consts
 
 bot = telebot.TeleBot(consts.token)
 
-@bot.message_handler(content_type = ["text"])
+@bot.message_handler(content_types = ["text"])
 def handle_text(message):
 		if message.text == "Привет!":
 				bot.send_message(message.from_user.id, "Здравствуй!")
