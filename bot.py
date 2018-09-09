@@ -3,7 +3,7 @@ import consts
 
 bot = telebot.TeleBot(consts.token)
 
-@bot.message_handler(content_types = ["start"])
+@bot.message_handler(commands = ["start"])
 def handle_start(message):
 		user_markup = telebot.types.ReplyKeyboardMarkup()
 		user_markup.row("start", "stop")
