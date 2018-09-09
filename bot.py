@@ -19,7 +19,7 @@ def handle_stop(message):
 		hide_markup = telebot.types.ReplyKeyboardRemove()
 		bot.send_message(message.from_user.id, "До встречи!", reply_markup = hide_markup)
 
-@bot.message.handler(content_types=["text"])
+@bot.message_handler(content_types=["text"])
 def handle_text(message):
 
 		if message.text == "фото":
