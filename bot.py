@@ -12,6 +12,10 @@ def handle_start(message):
 		user_markup.row('Стикер', 'Видео', 'Голос', 'Локации')
 		bot.send_message(message.from_user.id, "Добро пожаловать...", reply_markup=user_markup)
 
+@bot.message_handler (commands=['stop'])
+def handle_stop(message):
+		hide_markup = telebot.types.ReplyKeyboardRemove()
+		bot.send_message(message.from_user.id, "До встречи!", reply_markup = hide_markup)
 
 bot.polling(none_stop=True, interval=0)
 
