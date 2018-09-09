@@ -23,7 +23,7 @@ def handle_stop(message):
 def handle_text(message):
 
 		if message.text == "Фото":
-				directory	= "C:\Users\EGOR\Desktop\Дом"
+				directory	= "C:\\Users\\EGOR\\Desktop\\Дом"
 				all_files_in_directory = os.listdir(directory)
 				for file in all_files_in_directory:
 						img = open(directory + "/" + file, "rb")
