@@ -1,6 +1,5 @@
 import telebot
 import os
-import
 import consts
 
 bot = telebot.TeleBot(consts.token)
