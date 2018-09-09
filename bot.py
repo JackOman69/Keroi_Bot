@@ -20,7 +20,7 @@ def handle_start(message):
 # 		else:
 # 				bot.send_message(message.from_user.id, "Попробуй еще раз!")
 
-if __name__ = "__name__":
+if __name__ = "__main__":
 		bot.polling(none_stop=True)
 
 
