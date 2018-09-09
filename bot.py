@@ -22,7 +22,7 @@ def handle_stop(message):
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
 
-		if message.text == "фото":
+		if message.text == "Фото":
 				bot.send_chat_action(message.from_user.id, "upload_photo")
 				bot.send_photo(message.from_user.id, constant.template_photo.id)
 
