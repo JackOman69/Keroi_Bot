@@ -30,6 +30,13 @@ def handle_text(message):
 				bot.send_chat_action(message.from_user.id, "upload_photo")
 				bot.send_photo(message.from_user.id, img)
 				img.close()
+		elif message.text == "Аудио":
+				audio = open("C:/Users/Public/Music/Sample Music/Kalimba.mp3", "rb")
+				bot.send_chat_action(message.from_user.id, "upload_audio")
+				bot.send_audio(message.from_user.id, audio)
+				audio.close()
+
+
 
 bot.polling(none_stop=True, interval=0)
 
