@@ -6,7 +6,7 @@ bot = telebot.TeleBot(consts.token)
 @bot.message_handler(commands = ["start"])
 def handle_start(message):
 		user_markup = telebot.types.ReplyKeyboardMarkup()
-		user_markup.row("start", "stop")
+		user_markup.row("/start", "/stop")
 		user_markup.row("фото", "аудио","документы")
 		user_markup.row("стикер", "голос", "видео", "локация")
 		bot.send_message(message.from_user.id, "Добро пожаловать!", reply_markup = user.markup)
@@ -20,7 +20,8 @@ def handle_start(message):
 # 		else:
 # 				bot.send_message(message.from_user.id, "Попробуй еще раз!")
 
-bot.polling(none_stop=True)
+if __name__ = "__name__":
+		bot.polling(none_stop=True)
 
 
  #upd = bot.get_updates()
