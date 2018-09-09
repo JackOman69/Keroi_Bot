@@ -3,13 +3,13 @@ import consts
 
 bot = telebot.TeleBot(consts.token)
 
-@bot.message_handler(content_types = ["help"])
-		def handle_text(message):
-				print("""Этот бот пока может отвечать на две команды.
-								 Но это не предел!""")
-
-
-
+@bot.message_handler(content_types = ["start"])
+def handle_start(message):
+		user_markup = telebot.types.ReplyKeyboardMarkup()
+		user_markup.row("start", "stop")
+		user_markup.row("фото", "аудио","документы")
+		user_markup.row("стикер", "голос", "видео", "локация")
+		bot.send_message(message.from_user.id, "Добро пожаловать!", reply_markup = user.markup)
 
 @bot.message_handler(content_types = ["text"])
 def handle_text(message):
