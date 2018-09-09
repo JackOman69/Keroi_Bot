@@ -1,5 +1,6 @@
 import telebot
 import os
+import urllib.request as urllib2
 import consts
 
 bot = telebot.TeleBot(consts.token)
@@ -23,13 +24,12 @@ def handle_stop(message):
 def handle_text(message):
 
 		if message.text == "Фото":
-				directory	= r"C:/Project/Photos"
-				all_files_in_directory = os.listdir(directory)
-				for file in all_files_in_directory:
-						img = open(directory + "/" + file, "rb")
-						bot.send_chat_action(message.from_user.id, "upload_photo")
-						bot.send_photo(message.from_user.id, img)
-						img.close()
+				url = "https://habrastorage.org/storage2/145/277/c3e/145277c3ef9795a38135b6718eb7169c.png"
+				urllib2.urlretrieve(url, "image.jpg")
+				img = open("image.jpg", "rb")
+				bot.send_chat_action(message.from_user.id, "upload_photo")
+				bot.send_photo(message.from_user.id, img)
+				img.close()
 
 bot.polling(none_stop=True, interval=0)
 
