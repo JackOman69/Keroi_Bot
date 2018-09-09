@@ -23,8 +23,13 @@ def handle_stop(message):
 def handle_text(message):
 
 		if message.text == "Фото":
-				bot.send_chat_action(message.from_user.id, "upload_photo")
-				bot.send_photo(message.from_user.id, constant.template_photo.id)
+				directory	= "C:\Users\EGOR\Desktop\Дом"
+				all_files_in_directory = os.listdir(directory)
+				for file in all_files_in_directory:
+						img = open(directory + "/" + file, "rb")
+						bot.send_chat_action(message.from_user.id, "upload_photo")
+						bot.send_photo(message.from_user.id, img)
+						img.close()
 
 bot.polling(none_stop=True, interval=0)
 
