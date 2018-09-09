@@ -11,15 +11,14 @@ def handle_start(message):
 		user_markup.row("стикер", "голос", "видео", "локация")
 		bot.send_message(message.from_user.id, "Добро пожаловать!", reply_markup = user.markup)
 
-@bot.message_handler(content_types = ["text"])
-def handle_text(message):
-		if message.text == "Привет!":
-				bot.send_message(message.from_user.id, "Здравствуй!")
-		elif message.text == "Пока":
-				bot.send_message(message.from_user.id, "Ну пока :c")		
-		else:
-				bot.send_message(message.from_user.id, "Попробуй еще раз!")
-
+# @bot.message_handler(content_types = ["text"])
+# def handle_text(message):
+# 		if message.text == "Привет!":
+# 				bot.send_message(message.from_user.id, "Здравствуй!")
+# 		elif message.text == "Пока":
+# 				bot.send_message(message.from_user.id, "Ну пока :c")		
+# 		else:
+# 				bot.send_message(message.from_user.id, "Попробуй еще раз!")
 
 bot.polling(none_stop=True)
 
