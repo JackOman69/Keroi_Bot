@@ -1,9 +1,11 @@
 import telebot
+import os
+import
 import consts
 
 bot = telebot.TeleBot(consts.token)
 
-@bot.message_handler(commands=['start'])  
+@bot.message_handler(commands=["start"])
 def handle_start(message):
 
 		user_markup = telebot.types.ReplyKeyboardMarkup(True) 
@@ -12,10 +14,18 @@ def handle_start(message):
 		user_markup.row('Стикер', 'Видео', 'Голос', 'Локации')
 		bot.send_message(message.from_user.id, "Добро пожаловать...", reply_markup=user_markup)
 
-@bot.message_handler (commands=['stop'])
+@bot.message_handler(commands=['stop'])
 def handle_stop(message):
+
 		hide_markup = telebot.types.ReplyKeyboardRemove()
 		bot.send_message(message.from_user.id, "До встречи!", reply_markup = hide_markup)
+
+@bot.message.handler(content_types=["text"])
+def handle_text(message):
+
+		if message.text == "фото":
+				bot.send_chat_action(message.from_user.id, "upload_photo")
+				bot.send_photo(message.from_user.id, constant.template_photo.id)
 
 bot.polling(none_stop=True, interval=0)
 
