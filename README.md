@@ -1,2 +1,1 @@
-# Keroi_Bot
-My first serious project :DD
+### Вторая попытка написания Бота Телеграм
